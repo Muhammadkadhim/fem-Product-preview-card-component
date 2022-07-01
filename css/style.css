@@ -1,0 +1,131 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-primary: #3c8067;
+    --color-secondary: #6c7289;
+    --color-black: #1c232b;
+}
+
+body {
+    background-color: #f2ebe3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Montserrat", serif;
+}
+
+h1 {
+    color: var(--color-black);
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+h3,
+p {
+    color: var(--color-secondary);
+}
+
+.wrapper {
+    width: 630px;
+    height: 430px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.wrapper .image {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/image-product-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+}
+
+.wrapper .details {
+    padding: 2em 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    height: 100%;
+}
+
+.wrapper .details h3 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.wrapper .details p {
+    font-size: 14px;
+}
+
+.wrapper .details .cartBtn {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wrapper .details .cartBtn:hover {
+    background-color: #265e49;
+}
+
+.wrapper .details .price {
+    display: flex;
+    align-items: center;
+}
+.wrapper .details .price .old-price {
+    margin-left: 20px;
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-family: "Fraunces", sans-serif;
+}
+
+.wrapper .details .price h1 {
+    color: var(--color-primary);
+    font-size: 36px;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+        height: 90vh;
+        flex-direction: column;
+    }
+
+    .wrapper .details,
+    .wrapper .image {
+        width: 100%;
+    }
+    .wrapper .details {
+        height: 55%;
+    }
+    .wrapper .image {
+        height: 45%;
+    }
+
+    .wrapper .image {
+        background-image: url("../images/image-product-mobile.jpg");
+    }
+}
